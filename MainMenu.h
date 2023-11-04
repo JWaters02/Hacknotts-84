@@ -6,7 +6,7 @@
 
 class MainMenu {
 public:
-
+	void update();
 
 private:
 
