@@ -3,7 +3,7 @@
 #include <SDL.h>
 
 MainMenu::MainMenu() {
-	this->bg = IMG_LoadTexture(renderer, "assets\\images\\bg.png");
+	this->bg = IMG_LoadTexture(renderer, "..\\assets\\images\\bg.png");
 	this->active = true;
 }
 MainMenu::~MainMenu() {

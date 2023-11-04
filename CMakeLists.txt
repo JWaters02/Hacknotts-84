@@ -4,6 +4,11 @@ project(Hacknotts84)
 # Set the C++ standard you wish to use (you could use C++11 or above)
 set(CMAKE_CXX_STANDARD 17)
 
+# Output directories
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
+
 # Manually specify the paths to the SDL2 headers and libraries
 set(SDL2_INCLUDE_DIR "C:/SDL2/SDL2/include")
 set(SDL2_LIBRARY_DIR "C:/SDL2/SDL2/lib/x64")
