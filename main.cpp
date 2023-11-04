@@ -9,15 +9,24 @@ int main() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 	mainMenu = new MainMenu();
+    mainGame = new MainGame();
+    guide = new Guide();
 
     readTestingGameState();
 
 	while (running) {
 		SDL_RenderClear(renderer);
-		if (gameState == MAIN_MENU) {
-			if (mainMenu != nullptr) mainMenu->update();
-		
-		}
+        switch (gameState) {
+            case MAIN_MENU:
+                if (mainMenu != nullptr) mainMenu->update();
+                break;
+            case MAIN_GAME:
+                if (mainGame != nullptr) mainGame->update();
+                break;
+            case GUIDE:
+                if (guide != nullptr) guide->update();
+                break;
+        }
 		handleMainEvents();
 		SDL_RenderPresent(renderer);
 	}

@@ -24,7 +24,7 @@ set(SDL2_TTF_LIBRARY_DIR "C:/SDL2/SDL2_ttf/lib/x64")
 include_directories(${SDL2_INCLUDE_DIR} ${SDL2_IMAGE_INCLUDE_DIR} ${SDL2_TTF_INCLUDE_DIR})
 
 # Define the source files for the project
-add_executable(${PROJECT_NAME} main.cpp MainMenu.cpp MainMenu.h globals.h mainEvents.cpp "globals.cpp" "button.h")
+add_executable(${PROJECT_NAME} main.cpp MainMenu.cpp MainMenu.h globals.h mainEvents.cpp "globals.cpp" "button.h" Guide.cpp Guide.h MainGame.cpp MainGame.h)
 
 # Add the libraries for SDL2, specifying the exact path to the SDL2 libs
 target_link_libraries(${PROJECT_NAME}
