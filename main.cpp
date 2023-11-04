@@ -7,13 +7,14 @@ int main() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     readTestingGameState();
-    std::cout << "gameState: " << gameState << std::endl;
 
 	while (running) {
 		SDL_RenderClear(renderer);
 		if (gameState == MAIN_MENU) {
 
-		}
+		} else if (gameState == MAIN_GAME) {
+
+        }
 		handleMainEvents();
 		SDL_RenderPresent(renderer);
 	}

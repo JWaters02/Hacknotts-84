@@ -9,7 +9,12 @@ int gameState = -1;
 MainMenu* mainMenu = nullptr;
 
 void readTestingGameState() {
-    std::ifstream file("window.txt");;
-    file >> gameState;
-    file.close();
+    std::ifstream file("../window.txt");
+
+    if (!file) {
+        std::cerr << "Unable to open file" << std::endl;
+    } else {
+        file >> gameState;
+        file.close();
+    }
 }

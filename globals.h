@@ -16,7 +16,7 @@ extern bool running;
 extern SDL_Window* window;
 extern int gameState;
 extern SDL_Renderer* renderer;
-extern MainMenu mainMenu;
+extern MainMenu* mainMenu;
 
 void handleMainEvents();
 void readTestingGameState();
