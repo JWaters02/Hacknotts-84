@@ -8,8 +8,9 @@
 MiniGame::MiniGame() {
 	int diceNum = this->rollDice();
 
-	std::string pathname = "..\\assets\\images\\Dice" + std::to_string(diceNum) + ".png";
+	//std::string pathname = "..\\assets\\images\\Dice" + std::to_string(diceNum) + ".png";
 	//this->bg = IMG_LoadTexture(renderer, pathname.c_str());
+	generateRandomDice();
 	this->active = true;
 }
 
@@ -43,7 +44,12 @@ void MiniGame::diceRender() {
 
 void MiniGame::generateRandomDice() {
 	int number = rollDice();
+	std::cout << number;
 	std::string pathname = "..\\assets\\images\\Dice" + std::to_string(number) + ".png";
-	SDL_DestroyTexture(diceTexture);
+	if (diceTexture != nullptr) {
+		SDL_DestroyTexture(diceTexture);
+	}
+	
+	
 	diceTexture = IMG_LoadTexture(renderer, pathname.c_str());
 }
