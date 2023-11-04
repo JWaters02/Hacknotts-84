@@ -9,7 +9,7 @@ MainMenu::MainMenu() {
 	this->active = true;
 	int width = 500;
     TTF_Font* font = TTF_OpenFont(R"(..\assets\font\yesbois.ttf)", 24);
-    this->start = Button(200, 200, 200, 50, font, "", "Start", RED);
+    this->start = Button(0, 0, 200, 50, font, "", "Start", RED);
 }
 
 MainMenu::~MainMenu() {

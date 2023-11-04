@@ -32,6 +32,7 @@ Button::~Button() {
 void Button::renderButton() {
 	SDL_Rect renderPos = { x,y,w,h };
 	SDL_RenderCopy(renderer, this->img, nullptr, &renderPos);
+	SDL_RenderCopy(renderer, this->text, nullptr, &renderPos);
 }
 
 void Button::setText(const std::string& buttonText, SDL_Color textColor) {
@@ -45,12 +46,16 @@ void Button::setText(const std::string& buttonText, SDL_Color textColor) {
             SDL_Log("Unable to create texture from rendered buttonText! SDL Error: %s\n", SDL_GetError());
         }
 
-        // Get the dimensions of the button
-        w = textSurface->w;
-        h = textSurface->h;
+        if (textSurface->w < w && textSurface->h < h) {
+            x += (w - textSurface->w) / 2;
+            y += (h - textSurface->h) / 2;
+            w = textSurface->w;
+            h = textSurface->h;
+        }
 
-        // Get rid of old surface
+        // get rid of surface
         SDL_FreeSurface(textSurface);
     }
+
 }
 
