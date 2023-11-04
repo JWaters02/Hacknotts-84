@@ -4,7 +4,7 @@
 #include "globals.h"
 
 MainGame::MainGame() {
-    this->bg = IMG_LoadTexture(renderer, R"(..\assets\images\bg.png)");
+    //this->bg = IMG_LoadTexture(renderer, R"(..\assets\images\bg.png)");
     this->active = true;
     this->boardOfBoards = BoardOfBoards({200, 200, 600, 600});
     this->boardOfBoards.generateBoard();

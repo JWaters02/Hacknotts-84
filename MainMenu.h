@@ -8,16 +8,15 @@
 
 class MainMenu {
 public:
+	Button* b = nullptr;
 	SDL_Texture* bg;
 	bool active = false;
-
     MainMenu();
 	~MainMenu();
 	void update();
 
 
-private:
-    Button start = Button(0, 0, 0, 0, TTF_OpenFont(R"(..\assets\font\yesbois.ttf)", 24), "", "");
+
 };
 
 

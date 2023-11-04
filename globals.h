@@ -8,9 +8,10 @@ class MainMenu;
 class MainGame;
 class Guide;
 class DescrPage;
+class MiniGame;
 
 enum gameStates {
-	MAIN_MENU, MAIN_GAME, GUIDE, DESCR_PAGE
+	MAIN_MENU, MAIN_GAME, GUIDE, DESCR_PAGE, Mini_Game
 };
 
 const SDL_Color PINK   = {178, 93, 166, 255};
@@ -29,6 +30,7 @@ extern MainMenu* mainMenu;
 extern MainGame* mainGame;
 extern Guide* guide;
 extern DescrPage* descrPage;
+extern MiniGame* miniGame;
 
 void handleMainEvents();
 void readTestingGameState();

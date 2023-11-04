@@ -3,7 +3,11 @@
 #include <SDL.h>
 
 DescrPage::DescrPage() {
-	this->bg = IMG_LoadTexture(renderer, R"(..\assets\images\bg.png)");
+	std::string pathname = "..\\assets\\images\\guide.png";
+	this->bg = IMG_LoadTexture(renderer, pathname.c_str());
+	if (!bg) {
+		SDL_Log("Failed to load image: %s", IMG_GetError());
+	}
 	this->active = true;
 }
 
@@ -13,5 +17,5 @@ DescrPage::~DescrPage() {
 
 void DescrPage::update() {
 	if (!this->active) return;
-	SDL_RenderCopy(renderer, bg, NULL, NULL);
+	SDL_RenderCopy(renderer, this->bg, NULL, NULL);
 }
