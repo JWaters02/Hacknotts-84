@@ -20,7 +20,7 @@ MiniGame::~MiniGame() {
 
 void MiniGame::update() {
 	if (!this->active) return;
-	//SDL_RenderCopy(renderer, bg, NULL, NULL);
+	this->diceRender();
 }
 
 int MiniGame::rollDice() {
@@ -36,7 +36,7 @@ int MiniGame::rollDice() {
 void MiniGame::diceRender() {
 	int width = WINDOW_WIDTH / 4;
 	int height = width;
-	SDL_Rect rect = { WINDOW_WIDTH / 2,WINDOW_HEIGHT / 2,width,height };
+	SDL_Rect rect = { (WINDOW_WIDTH / 2)-width/2,WINDOW_HEIGHT / 3,width,height };
 	if (diceTexture != nullptr) {
 		SDL_RenderCopy(renderer, diceTexture, NULL, &rect);
 	}

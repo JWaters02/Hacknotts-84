@@ -20,7 +20,7 @@ int main() {
     mainGame = new MainGame();
     guide = new Guide();
     descrPage = new DescrPage();
-    //miniGame = new MiniGame();
+    miniGame = new MiniGame();
 
     readTestingGameState();
 
@@ -40,7 +40,7 @@ int main() {
                 if (descrPage != nullptr) descrPage->update();
                 break;
             case Mini_Game:
-                if (descrPage != nullptr) miniGame->update();
+                if (miniGame != nullptr) miniGame->update();
                 break;
         }
 		handleMainEvents();
