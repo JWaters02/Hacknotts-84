@@ -1,6 +1,7 @@
 //button.cpp
 #include "button.h"
 #include "globals.h"
+
 bool Button::checkCollision(int X, int Y) {
 	//check if position is within bounds of button, returns true otherwise returns false
 	if (X<x + w && X>x && Y<y + h && Y>y) return true;
