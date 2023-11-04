@@ -31,6 +31,7 @@ add_executable(${PROJECT_NAME} main.cpp
         button.h button.cpp
         Guide.cpp Guide.h
         MainGame.cpp MainGame.h
+        DescrPage.cpp DescrPage.h
 )
 
 # Add the libraries for SDL2, specifying the exact path to the SDL2 libs
