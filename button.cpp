@@ -1,3 +1,4 @@
+//button.cpp
 #include "button.h"
 #include "globals.h"
 bool Button::checkCollision(int X, int Y) {
@@ -26,3 +27,4 @@ void Button::renderButton() {
 	SDL_Rect renderPos = { x,y,w,h };
 	SDL_RenderCopy(renderer, this->img, NULL, &renderPos);
 }
+

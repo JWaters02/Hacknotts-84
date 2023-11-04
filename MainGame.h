@@ -1,3 +1,4 @@
+//maingame.h
 #ifndef HACKNOTTS84_MAINGAME_H
 #define HACKNOTTS84_MAINGAME_H
 

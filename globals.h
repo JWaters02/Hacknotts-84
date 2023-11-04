@@ -1,11 +1,8 @@
+//globals.h
 #include <SDL.h>
 #include <SDL_image.h>
 #include <iostream>
 #include <fstream>
-
-#include "MainMenu.h"
-#include "MainGame.h"
-#include "Guide.h"
 
 class MainMenu;
 class MainGame;

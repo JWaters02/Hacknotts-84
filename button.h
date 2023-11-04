@@ -1,6 +1,6 @@
 #include <SDL.h>
 #include <iostream>
-
+//button.h
 class Button {
 private:
 	SDL_Texture* img = nullptr;

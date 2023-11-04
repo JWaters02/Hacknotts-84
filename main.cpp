@@ -1,5 +1,9 @@
+//main.cpp
 #define SDL_MAIN_HANDLED
 #include "globals.h"
+#include "MainMenu.h"
+#include "MainGame.h"
+#include "Guide.h"
 #include <filesystem>
 
 int main() {
