@@ -9,10 +9,13 @@ public:
 	int y;
 	int w;
 	int h;
+	int scale = 1;
 
 	void setImg(std::string imgPath);
 	Button(int x, int y, int w, int h, std::string imgPath);
 	~Button();
+
+	virtual void setText();
 
 	virtual void onleftClick() {
 

@@ -16,3 +16,13 @@ void Button::setImg(std::string imgPath) {
 Button::Button(int x, int y, int w, int h,std::string imgPath) : x(x), y(y), w(w), h(h) {
 	this->setImg(imgPath);
 }
+
+Button::~Button() {
+	if (this->img != nullptr) SDL_DestroyTexture(this->img);
+
+}
+
+void Button::renderButton() {
+	SDL_Rect renderPos = { x,y,w,h };
+	SDL_RenderCopy(renderer, this->img, NULL, &renderPos);
+}
