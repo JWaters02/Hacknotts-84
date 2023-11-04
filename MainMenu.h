@@ -6,7 +6,12 @@
 
 class MainMenu {
 public:
+	SDL_Texture* bg;
+	bool active = false;
+	MainMenu();
+	~MainMenu();
 	void update();
+
 
 private:
 
