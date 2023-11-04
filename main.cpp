@@ -1,11 +1,11 @@
 //main.cpp
 #define SDL_MAIN_HANDLED
-#include "globals.h"
 #include "MainMenu.h"
 #include "MainGame.h"
 #include "Guide.h"
 #include "DescrPage.h"
 #include "MiniGame.h"
+#include "globals.h"
 #include <filesystem>
 #include <SDL_ttf.h>
 
@@ -20,7 +20,7 @@ int main() {
     mainGame = new MainGame();
     guide = new Guide();
     descrPage = new DescrPage();
-    miniGame = new MiniGame();
+    //miniGame = new MiniGame();
 
     readTestingGameState();
 

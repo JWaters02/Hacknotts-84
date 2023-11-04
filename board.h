@@ -1,10 +1,27 @@
 #include <vector>
+#include <iostream>
+#include <SDL.h>
+
 class Board {
+private:
+    std::vector<char> board;
+    SDL_Rect boardRect;
+
 public:
-	int depth = 0;
-	bool isBase = true; //is board to play noughts and crosses in and not board containing more boards
-	std::vector<char> board = {};
-	std::vector<Board> boardOfBoards = {};
-	Board(int depth);
-	void generateBoard();
+    explicit Board(SDL_Rect rect);
+
+    void reset();
+    void render() const;
+};
+
+class BoardOfBoards {
+private:
+    std::vector<Board> boardOfBoards;
+    SDL_Rect mainBoardRect;
+
+public:
+    explicit BoardOfBoards(SDL_Rect boardSize);
+
+    void generateBoard();
+    void render() const;
 };
