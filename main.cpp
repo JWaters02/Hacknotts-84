@@ -5,6 +5,7 @@
 #include "MainGame.h"
 #include "Guide.h"
 #include "DescrPage.h"
+#include "MiniGame.h"
 #include <filesystem>
 #include <SDL_ttf.h>
 
@@ -19,6 +20,7 @@ int main() {
     mainGame = new MainGame();
     guide = new Guide();
     descrPage = new DescrPage();
+    miniGame = new MiniGame();
 
     readTestingGameState();
 
@@ -36,6 +38,9 @@ int main() {
                 break;
             case DESCR_PAGE:
                 if (descrPage != nullptr) descrPage->update();
+                break;
+            case Mini_Game:
+                if (descrPage != nullptr) miniGame->update();
                 break;
         }
 		handleMainEvents();
