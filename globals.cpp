@@ -1,5 +1,5 @@
 #include "globals.h"
-//globals.cpp
+
 int WINDOW_WIDTH = 600;
 int WINDOW_HEIGHT = 600;
 bool running = true;

@@ -1,9 +1,13 @@
+#pragma once 
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include <iostream>
-//button.h
+
 class Button {
 private:
 	SDL_Texture* img = nullptr;
+    TTF_Font* mFont = nullptr;
+
 public:
 	int x;
 	int y;
@@ -12,10 +16,10 @@ public:
 	int scale = 1;
 
 	void setImg(std::string imgPath);
-	Button(int x, int y, int w, int h, std::string imgPath);
-	~Button();
+    void setText(std::string text, SDL_Color textColor);
 
-	virtual void setText();
+	Button(int x, int y, int w, int h, std::string imgPath, std::string text = "");
+	~Button();
 
 	virtual void onleftClick() {
 

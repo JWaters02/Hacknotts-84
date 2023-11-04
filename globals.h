@@ -13,6 +13,12 @@ enum gameStates {
 	MAIN_MENU, MAIN_GAME, GUIDE, DESCR_PAGE
 };
 
+const SDL_Color PINK   = {178, 93, 166, 255};
+const SDL_Color BLUE   = {102, 136, 195, 255};
+const SDL_Color GREEN  = {72, 165, 106, 255};
+const SDL_Color YELLOW = {234, 175, 65, 255};
+const SDL_Color RED    = {206, 74, 74, 255};
+
 extern int WINDOW_WIDTH;
 extern int WINDOW_HEIGHT;
 extern bool running;
