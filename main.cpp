@@ -15,6 +15,7 @@ int main() {
 		SDL_RenderClear(renderer);
 		if (gameState == MAIN_MENU) {
 			if (mainMenu != nullptr) mainMenu->update();
+		
 		}
 		handleMainEvents();
 		SDL_RenderPresent(renderer);
