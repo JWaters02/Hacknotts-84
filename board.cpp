@@ -4,11 +4,13 @@
 void Board::render() const {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
-    int x = boardRect.x + (boardRect.w / 3);
-    SDL_RenderDrawLine(renderer, x, boardRect.y, x, boardRect.y + boardRect.h);
+//    int x = boardRect.x + (boardRect.w / 3);
+//    SDL_RenderDrawLine(renderer, x, boardRect.y, x, boardRect.y + boardRect.h);
+//
+//    int y = boardRect.y + (boardRect.h / 3);
+//    SDL_RenderDrawLine(renderer, boardRect.x, y, boardRect.x + boardRect.w, y);
 
-    int y = boardRect.y + (boardRect.h / 3);
-    SDL_RenderDrawLine(renderer, boardRect.x, y, boardRect.x + boardRect.w, y);
+    SDL_RenderCopy(renderer, IMG_LoadTexture(renderer, R"(..\assets\images\board.png)"), nullptr, &boardRect);
 
     for (int i = 0; i < 9; ++i) {
         int row = i / 3;
