@@ -33,6 +33,7 @@ add_executable(${PROJECT_NAME} main.cpp
         MainGame.cpp MainGame.h
         DescrPage.cpp DescrPage.h
         MiniGame.h MiniGame.cpp)
+ "board.cpp" "board.h")
 
 # Add the libraries for SDL2, specifying the exact path to the SDL2 libs
 target_link_libraries(${PROJECT_NAME}

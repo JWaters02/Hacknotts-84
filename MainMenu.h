@@ -4,17 +4,18 @@
 
 #include <SDL.h>
 #include <iostream>
+#include "button.h"
 
 class MainMenu {
 public:
+	Button* b = nullptr;
 	SDL_Texture* bg;
 	bool active = false;
-	MainMenu();
+    MainMenu();
 	~MainMenu();
 	void update();
 
 
-private:
 
 };
 
