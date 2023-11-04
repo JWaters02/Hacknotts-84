@@ -5,10 +5,12 @@
 #include "MainGame.h"
 #include "Guide.h"
 #include <filesystem>
+#include <SDL_ttf.h>
 
 int main() {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	IMG_Init(IMG_INIT_PNG);
+    TTF_Init();
 	window = SDL_CreateWindow("noughts and crosses", 200, 200, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 

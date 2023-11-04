@@ -17,7 +17,7 @@ public:
 	void setImg(std::string imgPath);
     void setText(std::string text, SDL_Color textColor);
 
-	Button(int x, int y, int w, int h, std::string imgPath);
+	Button(int x, int y, int w, int h, std::string imgPath, std::string text = "");
 	~Button();
 
 	virtual void onleftClick() {

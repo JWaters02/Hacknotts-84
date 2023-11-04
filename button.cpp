@@ -15,8 +15,9 @@ void Button::setImg(std::string imgPath) {
 	this->img = IMG_LoadTexture(renderer, imgPath.c_str());
 }
 
-Button::Button(int x, int y, int w, int h,std::string imgPath) : x(x), y(y), w(w), h(h) {
+Button::Button(int x, int y, int w, int h,std::string imgPath, std::string text) : x(x), y(y), w(w), h(h) {
 	this->setImg(imgPath);
+    //this->setText(text, RED);
 }
 
 Button::~Button() {
@@ -35,7 +36,6 @@ void Button::setText(std::string text, SDL_Color textColor) {
         SDL_DestroyTexture(img);
         img = nullptr;
     }
-
 
     // Render the text to a surface
     SDL_Surface* textSurface = TTF_RenderText_Solid(mFont, text.c_str(), textColor);

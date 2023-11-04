@@ -16,11 +16,8 @@ MainMenu::~MainMenu() {
 void MainMenu::update() {
 	if (!this->active) return;
 	SDL_RenderCopy(renderer, bg, NULL, NULL);
-    TTF_Font *font = TTF_OpenFont(R"(..\assets\fonts\arial.ttf)", 24);
+    //TTF_Font *font = TTF_OpenFont(R"(..\assets\fonts\arial.ttf)", 24);
 
-
-
-    // Set the button texts
-    startButton.setText("Start Game", textColor);
-    guideButton.setText("Guide", textColor);
+    Button startButton(200, 200, 200, 50, "", "Start game");
+    Button guideButton(200, 300, 200, 50, "", "");
 }
