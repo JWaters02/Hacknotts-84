@@ -29,7 +29,31 @@ void Button::renderButton() {
 	SDL_RenderCopy(renderer, this->img, NULL, &renderPos);
 }
 
-void Button::setText() {
+void Button::setText(std::string text, SDL_Color textColor) {
+    // First, clean up any existing texture
+    if (img != nullptr) {
+        SDL_DestroyTexture(img);
+        img = nullptr;
+    }
 
+
+    // Render the text to a surface
+    SDL_Surface* textSurface = TTF_RenderText_Solid(mFont, text.c_str(), textColor);
+    if (textSurface == nullptr) {
+        SDL_Log("Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError());
+    } else {
+        // Create texture from surface pixels
+        img = SDL_CreateTextureFromSurface(renderer, textSurface);
+        if (img == nullptr) {
+            SDL_Log("Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError());
+        }
+
+        // Get the dimensions of the button
+        w = textSurface->w;
+        h = textSurface->h;
+
+        // Get rid of old surface
+        SDL_FreeSurface(textSurface);
+    }
 }
 
