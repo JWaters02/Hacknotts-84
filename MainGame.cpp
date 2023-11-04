@@ -4,7 +4,7 @@
 #include <SDL.h>
 
 MainGame::MainGame() {
-    //this->bg = IMG_LoadTexture(renderer, R"(..\assets\images\bg.png)");
+    this->bg = IMG_LoadTexture(renderer, R"(..\assets\images\bg.png)");
     this->active = true;
 }
 MainGame::~MainGame() {

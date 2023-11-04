@@ -8,10 +8,13 @@ class MiniGame {
 public:
 	SDL_Texture* bg;
 	bool active = false;
+	SDL_Texture* diceTexture;
 	MiniGame();
 	~MiniGame();
 	void update();
 	int rollDice();
+	void diceRender();
+	void generateRandomDice(){}
 
 
 private:

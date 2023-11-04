@@ -14,7 +14,7 @@ public:
     MainMenu();
 	~MainMenu();
 	void update();
-
+	void diceRendering();
 
 
 };

@@ -17,5 +17,6 @@ DescrPage::~DescrPage() {
 
 void DescrPage::update() {
 	if (!this->active) return;
+
 	SDL_RenderCopy(renderer, this->bg, NULL, NULL);
 }
