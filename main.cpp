@@ -16,9 +16,10 @@ int main() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 	mainMenu = new MainMenu();
-    mainGame = new MainGame();
-    guide = new Guide();
-    descrPage = new DescrPage();
+   // mainGame = new MainGame();
+   // guide = new Guide();
+    //descrPage = new DescrPage();
+
 
     readTestingGameState();
 

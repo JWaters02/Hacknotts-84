@@ -12,50 +12,62 @@ void Button::setImg(const std::string& imgPath) {
 	if (imgPath.empty()) return;
 	if (this->img != nullptr) SDL_DestroyTexture(this->img);
 	this->img = IMG_LoadTexture(renderer, imgPath.c_str());
+    std::cout << SDL_GetError();
 }
 
-Button::Button(int x, int y, int w, int h,
-               TTF_Font* font,
-               const std::string& imgPath,
-               const std::string& text,
-               SDL_Color textColour):
-               x(x), y(y), w(w), h(h), mFont(font) {
-	this->setImg(imgPath);
+Button::Button(int x, int y, int w, int h, std::string imgPath, void(*leftclickFunc)(),void(*rightClickFunc)(), std::string text, std::string fontPath,double textScale, SDL_Color textColour) : x(x), y(y), w(w), h(h) {
+    this->imgPath = imgPath;
+    this->setImg(this->imgPath);
+    if (fontPath != "") this->font = TTF_OpenFont(fontPath.c_str(), 31);
     this->setText(text, textColour);
+    this->leftClickFunction = leftclickFunc;
+    this->rightClickFunction = rightClickFunc;
+    
+}
+
+Button::Button() : x(0), y(0), w(0), h(0) {
 }
 
 Button::~Button() {
 	if (this->img != nullptr) SDL_DestroyTexture(this->img);
     if (this->text != nullptr) SDL_DestroyTexture(this->text);
+    if (this->font != nullptr) TTF_CloseFont(font);
 }
 
 void Button::renderButton() {
-	SDL_Rect renderPos = { x,y,w,h };
-	SDL_RenderCopy(renderer, this->img, nullptr, &renderPos);
-	SDL_RenderCopy(renderer, this->text, nullptr, &renderPos);
+    SDL_Rect renderPos = { x,y,w,h };
+    SDL_RenderCopy(renderer, this->img, NULL, &renderPos);
+    SDL_RenderCopy(renderer, this->text, NULL, NULL);
 }
 
-void Button::setText(const std::string& buttonText, SDL_Color textColor) {
-    if (buttonText.empty()) return;
-    SDL_Surface* textSurface = TTF_RenderText_Solid(mFont, buttonText.c_str(), textColor);
-    if (textSurface == nullptr) {
-        SDL_Log("Unable to render buttonText surface! SDL_ttf Error: %s\n", TTF_GetError());
-    } else {
-        this->text = SDL_CreateTextureFromSurface(renderer, textSurface);
-        if (this->text == nullptr) {
-            SDL_Log("Unable to create texture from rendered buttonText! SDL Error: %s\n", SDL_GetError());
-        }
+void Button::setText(std::string buttonText, SDL_Color textColor) {
 
-        if (textSurface->w < w && textSurface->h < h) {
-            x += (w - textSurface->w) / 2;
-            y += (h - textSurface->h) / 2;
-            w = textSurface->w;
-            h = textSurface->h;
-        }
 
-        // get rid of surface
-        SDL_FreeSurface(textSurface);
+    if (buttonText == "") return;
+  
+    if (this->font == nullptr) return;
+    SDL_Surface* textSurface = TTF_RenderText_Solid(this->font, buttonText.c_str(), textColor);
+    this->text = SDL_CreateTextureFromSurface(renderer, textSurface);
+    SDL_FreeSurface(textSurface);
+    std::cout << "bruh";
+    std::cout << SDL_GetError() << "\n";
+}
+
+
+
+bool Button::getMouseCollision() {
+    int x;
+    int y;
+    SDL_GetMouseState(&x, &y);
+    return this->checkCollision(x, y);
+}
+
+void Button::handleMouseEvent() {
+    int x;
+    int y;
+    Uint32 btn=SDL_GetMouseState(&x, &y);
+    if (this->checkCollision(x, y)) {
+        if (btn & SDL_BUTTON(SDL_BUTTON_LEFT)) this->onleftClick();
+        if (btn & SDL_BUTTON(SDL_BUTTON_RIGHT)) this->onRightClick();
     }
-
 }
-
