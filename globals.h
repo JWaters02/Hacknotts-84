@@ -1,7 +1,7 @@
 #include <SDL.h>
-int WINDOW_WIDTH = 600;
-int WINDOW_HEIGHT = 600;
-bool running = true;
+extern int WINDOW_WIDTH;
+extern int WINDOW_HEIGHT;
+extern bool running;
 extern SDL_Window* window;
 extern SDL_Renderer* renderer;
 
