@@ -1,9 +1,10 @@
+//mainmenu.cpp
 #include "MainMenu.h"
 #include "globals.h"
 #include <SDL.h>
 
 MainMenu::MainMenu() {
-	this->bg = IMG_LoadTexture(renderer, "assets\\images\\bg.png");
+	this->bg = IMG_LoadTexture(renderer, R"(..\assets\images\bg.png)");
 	this->active = true;
 }
 MainMenu::~MainMenu() {
@@ -13,5 +14,4 @@ MainMenu::~MainMenu() {
 void MainMenu::update() {
 	if (!this->active) return;
 	SDL_RenderCopy(renderer, bg, NULL, NULL);
-	std::cout << SDL_GetError();
 }

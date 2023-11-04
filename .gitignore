@@ -35,4 +35,5 @@
 cmake-build-debug/
 .vs/
 out/
+build/
 window.txt

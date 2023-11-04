@@ -1,14 +1,15 @@
+//globals.h
 #include <SDL.h>
 #include <SDL_image.h>
 #include <iostream>
 #include <fstream>
 
-#include "MainMenu.h"
-
-class MainMenu; //declares Mainmenu in scope of globals.h
+class MainMenu;
+class MainGame;
+class Guide;
 
 enum gameStates {
-	MAIN_MENU, MAIN_GAME
+	MAIN_MENU, MAIN_GAME, GUIDE
 };
 
 extern int WINDOW_WIDTH;
@@ -18,6 +19,9 @@ extern SDL_Window* window;
 extern int gameState;
 extern SDL_Renderer* renderer;
 extern MainMenu* mainMenu;
+extern MainGame* mainGame;
+extern Guide* guide;
 
 void handleMainEvents();
 void readTestingGameState();
+char* getAssetFile(const std::string& subDir = "");

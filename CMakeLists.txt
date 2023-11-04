@@ -4,6 +4,11 @@ project(Hacknotts84)
 # Set the C++ standard you wish to use (you could use C++11 or above)
 set(CMAKE_CXX_STANDARD 17)
 
+# Output directories
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
+
 # Manually specify the paths to the SDL2 headers and libraries
 set(SDL2_INCLUDE_DIR "C:/SDL2/SDL2/include")
 set(SDL2_LIBRARY_DIR "C:/SDL2/SDL2/lib/x64")
@@ -19,7 +24,14 @@ set(SDL2_TTF_LIBRARY_DIR "C:/SDL2/SDL2_ttf/lib/x64")
 include_directories(${SDL2_INCLUDE_DIR} ${SDL2_IMAGE_INCLUDE_DIR} ${SDL2_TTF_INCLUDE_DIR})
 
 # Define the source files for the project
-add_executable(${PROJECT_NAME} main.cpp MainMenu.cpp MainMenu.h globals.h mainEvents.cpp "globals.cpp" "DescrPage.cpp")
+add_executable(${PROJECT_NAME} main.cpp
+        MainMenu.cpp MainMenu.h
+        globals.h globals.cpp
+        mainEvents.cpp
+        button.h button.cpp
+        Guide.cpp Guide.h
+        MainGame.cpp MainGame.h
+)
 
 # Add the libraries for SDL2, specifying the exact path to the SDL2 libs
 target_link_libraries(${PROJECT_NAME}

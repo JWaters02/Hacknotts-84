@@ -1,5 +1,10 @@
+//main.cpp
 #define SDL_MAIN_HANDLED
 #include "globals.h"
+#include "MainMenu.h"
+#include "MainGame.h"
+#include "Guide.h"
+#include <filesystem>
 
 int main() {
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -8,15 +13,24 @@ int main() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 	mainMenu = new MainMenu();
+    mainGame = new MainGame();
+    guide = new Guide();
 
     readTestingGameState();
 
 	while (running) {
 		SDL_RenderClear(renderer);
-		if (gameState == MAIN_MENU) {
-			if (mainMenu != nullptr) mainMenu->update();
-		
-		}
+        switch (gameState) {
+            case MAIN_MENU:
+                if (mainMenu != nullptr) mainMenu->update();
+                break;
+            case MAIN_GAME:
+                if (mainGame != nullptr) mainGame->update();
+                break;
+            case GUIDE:
+                if (guide != nullptr) guide->update();
+                break;
+        }
 		handleMainEvents();
 		SDL_RenderPresent(renderer);
 	}
