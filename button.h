@@ -6,6 +6,7 @@
 class Button {
 private:
 	SDL_Texture* img = nullptr;
+    SDL_Texture* text = nullptr;
     TTF_Font* mFont = nullptr;
 
 public:
@@ -15,10 +16,14 @@ public:
 	int h;
 	int scale = 1;
 
-	void setImg(std::string imgPath);
-    void setText(std::string text, SDL_Color textColor);
+	void setImg(const std::string& imgPath);
+    void setText(const std::string& buttonText, SDL_Color textColor);
 
-	Button(int x, int y, int w, int h, std::string imgPath, std::string text = "");
+	Button(int x, int y, int w, int h,
+           TTF_Font* font,
+           const std::string& imgPath,
+           const std::string& text = "",
+           SDL_Color textColour = {206, 74, 74, 255});
 	~Button();
 
 	virtual void onleftClick() {

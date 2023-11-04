@@ -2,13 +2,14 @@
 #include "MainMenu.h"
 #include "button.h"
 #include "globals.h"
-#include "button.h"
 #include <SDL.h>
 
 MainMenu::MainMenu() {
 	this->bg = IMG_LoadTexture(renderer, R"(..\assets\images\bg.png)");
 	this->active = true;
 	int width = 500;
+    TTF_Font* font = TTF_OpenFont(R"(..\assets\font\yesbois.ttf)", 24);
+    this->start = Button(0, 0, 200, 50, font, "", "Start", RED);
 }
 
 MainMenu::~MainMenu() {
@@ -17,9 +18,6 @@ MainMenu::~MainMenu() {
 
 void MainMenu::update() {
 	if (!this->active) return;
-	SDL_RenderCopy(renderer, bg, NULL, NULL);
-    //TTF_Font *font = TTF_OpenFont(R"(..\assets\fonts\arial.ttf)", 24);
-
-    Button startButton(200, 200, 200, 50, "", "Start game");
-    Button guideButton(200, 300, 200, 50, "", "Guide");
+	SDL_RenderCopy(renderer, bg, nullptr, nullptr);
+    start.renderButton();
 }
