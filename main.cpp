@@ -1,5 +1,6 @@
 #define SDL_MAIN_HANDLED
 #include "globals.h"
+#include <filesystem>
 
 int main() {
 	SDL_Init(SDL_INIT_EVERYTHING);
