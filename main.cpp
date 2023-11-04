@@ -20,7 +20,7 @@ int main() {
     mainGame = new MainGame();
     guide = new Guide();
     descrPage = new DescrPage();
-    miniGame = new MiniGame();
+    //miniGame = new MiniGame();
 
     readTestingGameState();
 
