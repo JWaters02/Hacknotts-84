@@ -1,5 +1,5 @@
-#ifndef HACKNOTTS84_MAINMENU_H
-#define HACKNOTTS84_MAINMENU_H
+#ifndef HACKNOTTS84_DESCRPAGE_H
+#define HACKNOTTS84_DESCRPAGE_H
 
 #include <SDL.h>
 #include <iostream>
@@ -17,4 +17,4 @@ private:
 };
 
 
-#endif //HACKNOTTS84_MAINMENU_H
+#endif //HACKNOTTS84_DESCRPAGE_H
