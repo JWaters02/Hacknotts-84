@@ -9,7 +9,8 @@ public:
 	SDL_Texture* bg;
 	bool active = false;
 	DescrPage();
-	DescrPage();
+	~DescrPage();
+	void update();
 	
 private:
 

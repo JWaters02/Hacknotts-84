@@ -9,6 +9,7 @@ int gameState = -1;
 MainMenu* mainMenu = nullptr;
 MainGame* mainGame=nullptr;
 Guide* guide=nullptr;
+DescrPage* descrPage = nullptr;
 
 void readTestingGameState() {
     std::ifstream file("../window.txt");

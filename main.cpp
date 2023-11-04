@@ -4,6 +4,7 @@
 #include "MainMenu.h"
 #include "MainGame.h"
 #include "Guide.h"
+#include "DescrPage.h"
 #include <filesystem>
 
 int main() {
@@ -15,6 +16,7 @@ int main() {
 	mainMenu = new MainMenu();
     mainGame = new MainGame();
     guide = new Guide();
+    descrPage = new DescrPage();
 
     readTestingGameState();
 
@@ -29,6 +31,9 @@ int main() {
                 break;
             case GUIDE:
                 if (guide != nullptr) guide->update();
+                break;
+            case DESCR_PAGE:
+                if (descrPage != nullptr) descrPage->update();
                 break;
         }
 		handleMainEvents();
