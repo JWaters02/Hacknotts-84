@@ -1,10 +1,10 @@
 //main.cpp
 #define SDL_MAIN_HANDLED
-#include "globals.h"
 #include "MainMenu.h"
 #include "MainGame.h"
 #include "Guide.h"
 #include "DescrPage.h"
+#include "globals.h"
 #include <filesystem>
 #include <SDL_ttf.h>
 

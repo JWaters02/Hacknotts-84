@@ -1,14 +1,14 @@
 #include "globals.h"
 
-int WINDOW_WIDTH = 600;
-int WINDOW_HEIGHT = 600;
+int WINDOW_WIDTH = 1200;
+int WINDOW_HEIGHT = 900;
 bool running = true;
 SDL_Window* window;
 SDL_Renderer* renderer;
 int gameState = -1;
 MainMenu* mainMenu = nullptr;
-MainGame* mainGame=nullptr;
-Guide* guide=nullptr;
+MainGame* mainGame = nullptr;
+Guide* guide = nullptr;
 DescrPage* descrPage = nullptr;
 
 void readTestingGameState() {
