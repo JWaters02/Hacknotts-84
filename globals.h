@@ -1,5 +1,8 @@
 #include <SDL.h>
 #include <iostream>
+#include <fstream>
+
+#include "MainMenu.h"
 
 enum gameStates {
 	MAIN_MENU, MAIN_GAME
@@ -14,3 +17,4 @@ extern SDL_Renderer* renderer;
 extern MainMenu* mainMenu;
 
 void handleMainEvents();
+void readTestingGameState();
