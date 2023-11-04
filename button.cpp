@@ -29,3 +29,7 @@ void Button::renderButton() {
 	SDL_RenderCopy(renderer, this->img, NULL, &renderPos);
 }
 
+void Button::setText() {
+
+}
+
