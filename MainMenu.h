@@ -8,6 +8,7 @@
 class MainMenu {
 public:
 	SDL_Texture* bg;
+	Button b;
 	bool active = false;
 	MainMenu();
 	~MainMenu();
